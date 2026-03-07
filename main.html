@@ -41,9 +41,10 @@
 
    <section class="main py-[60px]">
       <div class="toggler max-w-[1300px] mx-auto bg-white rounded-xl p-6 shadow-xl">
-        <button class="btn btn-primary w-[120px]">All</button>
-        <button class="btn btn-outline btn-primary w-[120px]">Open</button>
-        <button class="btn btn-outline btn-primary w-[120px]">Close</button>
+        <button class="btn btn-primary w-[120px]" id="all" onclick="toggleButton('all')">All</button>
+        <button class="btn btn-outline w-[120px]" id="open" onclick="toggleButton('open')">Open</button>
+        <button class="btn btn-outline w-[120px]" id="closed" onclick="toggleButton('closed')">Close</button>
+
       </div>
 
       <div class="main-header max-w-[1300px] mx-auto bg-white rounded-t-xl p-6 shadow-xl mt-4 flex items-center justify-between">

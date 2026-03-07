@@ -3,7 +3,7 @@ const fetchAllIssue=async()=>{
     const res=await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data=await res.json();
     const details=data.data;
-    console.log(data.data);
+    // console.log(data.data);
     // console.log(data.data.length);
     totalIssueNumber(data.data.length);
     displayIssue(details);
@@ -12,13 +12,26 @@ const fetchAllIssue=async()=>{
 
 const displayIssue=(data)=>{
     const cardContainer=document.getElementById("cardContainer");
+    cardContainer.innerHTML = ""; 
     const allIssue=data;
     // const card=document.createElement("div");
     // card.innerHTML="";
     allIssue.forEach(x => {
         // console.log(x.title);
          let statusColor="";
-         let cardStatus=document.getElementById("cardStatus");
+         let labelsElement="";
+         if(x.labels && x.labels.length > 0){
+            x.labels.forEach(y => {
+                // console.log(y);
+                if(y==="bug"){
+                    labelsElement+=`<button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>`;
+                }
+                else{
+                    labelsElement+=`<button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> ${y}</button>`;
+                }
+
+            })
+        };
          if(x.status==="open"){
             statusColor="#1be614";
          }
@@ -40,8 +53,7 @@ const displayIssue=(data)=>{
                         <h3 class="font-semibold text-[17px]" id="card_title">${x.title}</h3>
                         <p id="description" class="description-clamp">${x.description}</p>
                         <div class="flex gap-3">
-                            <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
-                            <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
+                            ${labelsElement}
                         </div>
                     </div>
                     <div class="border-t border-gray-300 mt-auto"></div>
@@ -73,5 +85,46 @@ function formatDate(dateString){
     const day = String(date.getDate()).padStart(2,'0');
     return `${year}/${month}/${day}`;
 }
+
+const filterIssue = async (id)=>{
+    const res=await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
+    const data=await res.json();
+    const details=data.data;
+    const filter=details.filter(x=>x.status===id);
+    console.log(filter);
+    displayIssue(filter);
+}
+function showIssue(id)
+{
+  if(id==="open")
+  {
+    filterIssue(id);
+  }
+  else if(id==="closed")
+  {
+    filterIssue(id);
+  }
+  else{
+    fetchAllIssue();
+  }
+}
+
+function toggleButton(id)
+{   
+    document.getElementById("all").classList.remove("btn-primary");
+    document.getElementById("open").classList.remove("btn-primary");
+    document.getElementById("closed").classList.remove("btn-primary");
+
+    document.getElementById("all").classList.add("btn-outline");
+    document.getElementById("open").classList.add("btn-outline");
+    document.getElementById("closed").classList.add("btn-outline");
+
+    const button=document.getElementById(id);
+    showIssue(id);
+    button.classList.remove("btn-outline");
+    button.classList.add("btn-primary");
+    
+}
+
 
 fetchAllIssue();
