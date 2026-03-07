@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--------- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-------- font geist------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!---------- css----->
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <section class="mx-auto w-[520px] space-y-6 shadow-xl rounded-2xl p-8 my-[60px] ">
+        <div class="login pt-6">
+            <div class="login-header flex flex-col text-center justify-center space-y-2 ">
+                <div class="text-center flex justify-center">
+                  <img src="assets/github-logo.png" >
+                </div>
+                <h1>GitHub Issues Tracker</h1>
+                <p>Sign in to manage your issues</p>
+            </div>
+        </div>
+
+        <div class="login-form">
+            <form class="flex flex-col">
+                <fieldset class="fieldset space-y-3">
+                    <label for="username" class="font-medium text-[16px]">Username</label>
+                    <input type="text" placeholder="Enter Username" placeholder="username" class="input input-md w-full" required>
+                    <label for="password" class="font-medium text-[16px]">Password</label>
+                    <input type="password" placeholder="Password" placeholder="password" class="input input-md w-full" required>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="flex items-center my-6">
+            <div class="flex-1 border-t border-gray-300"></div>
+            <span class="px-4 text-gray-500 text-sm">OR</span>
+            <div class="flex-1 border-t border-gray-300"></div>
+        </div>
+        <div class="login-footer " >
+            <p class="text-center py-3">Demo Credentials:</p>
+            <div class="bg-gray-100 p-6 flex flex-col space-y-2 items-center justify-center">
+               <p><span class="font-medium text-[16px] text-gray-900">Username:</span> user</p>
+               <p><span class="font-medium text-[16px] text-gray-900">Password:</span> admin123</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
