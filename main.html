@@ -52,7 +52,7 @@
                 <img src="assets/Aperture.png">
             </div>
             <div class="">
-                <h3 class="font-semibold text-[20px]" id="total_issue"><span>50</span> Issues</h3>
+                <h3 class="font-semibold text-[20px]" id="total_issue"><span id="issueNumber">0</span> Issues</h3>
                 <p>Track and manage your project issues</p>
             </div>
          </div>
@@ -69,8 +69,8 @@
       </div>
       
        <div class="main-header max-w-[1300px] mx-auto bg-[#FBFBFB] border-t border-t-gray-200 p-6 shadow-xl rounded-b-xl  flex items-center justify-between">
-          <div class="container py-6 grid grid-cols-4 gap-4">
-             <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
+          <div class="container py-6 grid grid-cols-3 gap-4" id="cardContainer">
+             <!-- <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
                     <div class="card_top flex items-center justify-between px-3">
                             <div class="w-6 h-6 bg-transparent" id="status">
                                 <img src="assets/Open-Status.png" class="w-full h-full object-contain hidden">
@@ -84,8 +84,8 @@
                             </div>
                     </div>
                     <div class="card_main px-3 space-y-2">
-                        <h3 class="font-semibold text-[17px]">Fix navigation menu on mobile devices</h3>
-                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+                        <h3 class="font-semibold text-[17px]" id="card_title">Fix navigation menu on mobile devices</h3>
+                        <p id="description">The navigation menu doesn't collapse properly on mobile devices...</p>
                         <div class="flex gap-3">
                             <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
                             <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
@@ -96,118 +96,13 @@
                             <p>#1 by john_doe</p>
                             <p>1/15/2024</p>
                     </div>
-              </div>
-                           <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
-                    <div class="card_top flex items-center justify-between px-3">
-                            <div class="w-6 h-6 bg-transparent" id="status">
-                                <img src="assets/Open-Status.png" class="w-full h-full object-contain hidden">
-                                <img src="assets/Closed- Status .png" class="w-full h-full object-contain">
-                            </div>
-
-                            <div id="proirity">
-                                <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6">HIGH</button>
-                                <button class="btn btn-soft rounded-2xl py-2 px-6 w-20 h-6 text-gray-500 hidden">Low</button>
-                                <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6 w-20 h-6 hidden">Medium</button>
-                            </div>
-                    </div>
-                    <div class="card_main px-3 space-y-2">
-                        <h3 class="font-semibold text-[17px]">Fix navigation menu on mobile devices</h3>
-                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-                        <div>
-                            <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
-                            <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-300"></div>
-                    <div class="card_footer px-4 py-3 text-sm text-gray-500">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-              </div>
-                           <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
-                    <div class="card_top flex items-center justify-between px-3">
-                            <div class="w-6 h-6 bg-transparent" id="status">
-                                <img src="assets/Open-Status.png" class="w-full h-full object-contain hidden">
-                                <img src="assets/Closed- Status .png" class="w-full h-full object-contain">
-                            </div>
-
-                            <div id="proirity">
-                                <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6">HIGH</button>
-                                <button class="btn btn-soft rounded-2xl py-2 px-6 w-20 h-6 text-gray-500 hidden">Low</button>
-                                <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6 w-20 h-6 hidden">Medium</button>
-                            </div>
-                    </div>
-                    <div class="card_main px-3 space-y-2">
-                        <h3 class="font-semibold text-[17px]">Fix navigation menu on mobile devices</h3>
-                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-                        <div>
-                            <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
-                            <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-300"></div>
-                    <div class="card_footer px-4 py-3 text-sm text-gray-500">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-              </div>
-                           <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
-                    <div class="card_top flex items-center justify-between px-3">
-                            <div class="w-6 h-6 bg-transparent" id="status">
-                                <img src="assets/Open-Status.png" class="w-full h-full object-contain hidden">
-                                <img src="assets/Closed- Status .png" class="w-full h-full object-contain">
-                            </div>
-
-                            <div id="proirity">
-                                <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6">HIGH</button>
-                                <button class="btn btn-soft rounded-2xl py-2 px-6 w-20 h-6 text-gray-500 hidden">Low</button>
-                                <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6 w-20 h-6 hidden">Medium</button>
-                            </div>
-                    </div>
-                    <div class="card_main px-3 space-y-2">
-                        <h3 class="font-semibold text-[17px]">Fix navigation menu on mobile devices</h3>
-                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-                        <div>
-                            <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
-                            <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-300"></div>
-                    <div class="card_footer px-4 py-3 text-sm text-gray-500">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-              </div>
-                           <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
-                    <div class="card_top flex items-center justify-between px-3">
-                            <div class="w-6 h-6 bg-transparent" id="status">
-                                <img src="assets/Open-Status.png" class="w-full h-full object-contain hidden">
-                                <img src="assets/Closed- Status .png" class="w-full h-full object-contain">
-                            </div>
-
-                            <div id="proirity">
-                                <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6">HIGH</button>
-                                <button class="btn btn-soft rounded-2xl py-2 px-6 w-20 h-6 text-gray-500 hidden">Low</button>
-                                <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6 w-20 h-6 hidden">Medium</button>
-                            </div>
-                    </div>
-                    <div class="card_main px-3 space-y-2">
-                        <h3 class="font-semibold text-[17px]">Fix navigation menu on mobile devices</h3>
-                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-                        <div>
-                            <button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>
-                            <button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> HELP WANTED</button>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-300"></div>
-                    <div class="card_footer px-4 py-3 text-sm text-gray-500">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-              </div>
+              </div> -->
+  
+            </div>
           </div>
          </div>
       </div>
    </section>
+   <script src="./js/main.js"></script>
 </body>
 </html>

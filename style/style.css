@@ -8,3 +8,12 @@ body{
 p{
     color: #64748B;
 }
+
+.description-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+    -webkit-line-clamp: 2;
+    line-height: 1.5rem;
+    max-height: 3rem;
+}
