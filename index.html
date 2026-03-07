@@ -30,15 +30,15 @@
         </div>
 
         <div class="login-form">
-            <form class="flex flex-col">
+            <div class="flex flex-col" >
                 <fieldset class="fieldset space-y-3">
                     <label for="username" class="font-medium text-[16px]">Username</label>
-                    <input type="text" placeholder="Enter Username" placeholder="username" class="input input-md w-full" required>
+                    <input type="text" placeholder="Enter Username"  class="input input-md w-full" id="userName" required>
                     <label for="password" class="font-medium text-[16px]">Password</label>
-                    <input type="password" placeholder="Password" placeholder="password" class="input input-md w-full" required>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <input type="password" placeholder="Enter Password" placeholder="password" class="input input-md w-full" id="password" required>
+                    <button type="submit" class="btn btn-primary" onclick="signUp()">Sign in</button>
                 </fieldset>
-            </form>
+            </div>
         </div>
         <div class="flex items-center my-6">
             <div class="flex-1 border-t border-gray-300"></div>
@@ -54,4 +54,19 @@
         </div>
     </section>
 </body>
+
+<script>
+    function signUp(){
+
+        const username=document.getElementById("userName").value;
+        const password=document.getElementById("password").value;
+        if(username=="user" && password=="admin123"){
+            window.location.href = "./main.html"
+        }
+        else{
+            alert("Invalid Credentials")
+        }
+        // window.location.href = "main.html"
+    }
+</script>
 </html>
