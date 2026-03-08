@@ -24,7 +24,7 @@
                 <div class="w-9 h-9">
                     <img src="assets/github-logo.png">
                 </div>
-                <h3 class="font-semibold text-[24px]">GitHub Issues Tracker</h3>
+                <h3 class="font-semibold text-[10px] md:text-[24px]">GitHub Issues Tracker</h3>
             </div>
             <div class="right">
                <div class="flex gap-2">
@@ -32,7 +32,7 @@
                     <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
                     <input type="text" class="grow" placeholder="Search issues..." id="searchInput" />
                 </label>
-                <button type="submit" class="btn btn-primary" onClick="search()">+ New Issue</button>
+                <button type="submit" class="btn btn-primary w-[60px] md:w-[120px] text-[10px] md:text-[14px]" onClick="search()">+ New Issue</button>
                </div>
 
             </div>
@@ -41,9 +41,9 @@
 
    <section class="main py-[60px]">
       <div class="toggler max-w-[1300px] mx-auto bg-white rounded-xl p-6 shadow-xl">
-        <button class="btn btn-primary w-[120px]" id="all" onclick="toggleButton('all')">All</button>
-        <button class="btn btn-outline w-[120px]" id="open" onclick="toggleButton('open')">Open</button>
-        <button class="btn btn-outline w-[120px]" id="closed" onclick="toggleButton('closed')">Close</button>
+        <button class="btn btn-primary w-[60px] md:w-[120px]" id="all" onclick="toggleButton('all')">All</button>
+        <button class="btn btn-outline w-[60px] md:w-[120px]" id="open" onclick="toggleButton('open')">Open</button>
+        <button class="btn btn-outline w-[60px] md:w-[120px]" id="closed" onclick="toggleButton('closed')">Close</button>
 
       </div>
      <div class=" max-w-[1300px] mx-auto flex p-6 justify-center hidden" id="loadingDiv">
@@ -72,7 +72,7 @@
       </div>
       
        <div class="main-header max-w-[1300px] mx-auto bg-[#FBFBFB] border-t border-t-gray-200 p-6 shadow-xl rounded-b-xl  flex items-center justify-between">
-          <div class="container py-6 grid grid-cols-3 gap-4" id="cardContainer">
+          <div class="container py-6 grid grid-cols-1  md:grid-cols-3 gap-4" id="cardContainer">
              <!-- <div class="card bg-white rounded shadow-2xl pt-4 border-t-3 border-t-[#1be614] space-y-4">
                     <div class="card_top flex items-center justify-between px-3">
                             <div class="w-6 h-6 bg-transparent" id="status">
