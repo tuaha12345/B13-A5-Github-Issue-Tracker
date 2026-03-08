@@ -73,6 +73,7 @@ const displayIssue=(data)=>{
 
 }
 
+
 const totalIssueNumber=(num)=>{
     const issueNumber=document.getElementById("issueNumber");
     issueNumber.innerText=num;
@@ -201,6 +202,19 @@ async function modalBody(id){
 
                     </div>
               </div>`;
+}
+
+const search=async()=>{
+    const searchText=document.getElementById("searchInput").value;
+    // alert(searchText);
+    // const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues?search=${searchInput}`);
+    const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+    const data=await res.json();
+    const details=data.data;
+    // console.log(data.data);
+    totalIssueNumber(data.data.length);
+    displayIssue(details);
+    searchInput.value="";
 }
 
 fetchAllIssue();

@@ -27,13 +27,13 @@
                 <h3 class="font-semibold text-[24px]">GitHub Issues Tracker</h3>
             </div>
             <div class="right">
-               <form class="flex gap-2">
+               <div class="flex gap-2">
                <label class="input input-bordered flex items-center gap-2 ">
                     <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
-                    <input type="text" class="grow" placeholder="Search issues..." />
+                    <input type="text" class="grow" placeholder="Search issues..." id="searchInput" />
                 </label>
-                <button type="submit" class="btn btn-primary">+ New Issue</button>
-               </form>
+                <button type="submit" class="btn btn-primary" onClick="search()">+ New Issue</button>
+               </div>
 
             </div>
     </div>
@@ -107,7 +107,6 @@
 
     <div>
         <!-- Open the modal using ID.showModal() method -->
-            <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
             <dialog id="my_modal_1" class="modal">
             <div class="modal-box">
                 <div class="modal_body" id="modal_body">
