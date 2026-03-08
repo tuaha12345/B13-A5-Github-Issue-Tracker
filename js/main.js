@@ -1,5 +1,6 @@
 
 const fetchAllIssue=async()=>{
+    showLoading();
     const res=await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data=await res.json();
     const details=data.data;
@@ -7,10 +8,12 @@ const fetchAllIssue=async()=>{
     // console.log(data.data.length);
     totalIssueNumber(data.data.length);
     displayIssue(details);
+    hideLoading();
 
 }
 
 const displayIssue=(data)=>{
+    
     const cardContainer=document.getElementById("cardContainer");
     cardContainer.innerHTML = ""; 
     const allIssue=data;
@@ -70,7 +73,8 @@ const displayIssue=(data)=>{
                     </div>
               </div>`;
     });
-
+   
+    
 }
 
 
@@ -88,6 +92,7 @@ function formatDate(dateString){
 }
 
 const filterIssue = async (id)=>{
+    showLoading();
     const res=await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data=await res.json();
     const details=data.data;
@@ -95,6 +100,7 @@ const filterIssue = async (id)=>{
     console.log(filter);
     totalIssueNumber(filter.length);
     displayIssue(filter);
+    hideLoading();
 }
 function showIssue(id)
 {
@@ -205,6 +211,7 @@ async function modalBody(id){
 }
 
 const search=async()=>{
+    showLoading();
     const searchText=document.getElementById("searchInput").value;
     // alert(searchText);
     // const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues?search=${searchInput}`);
@@ -215,6 +222,16 @@ const search=async()=>{
     totalIssueNumber(data.data.length);
     displayIssue(details);
     searchInput.value="";
+    hideLoading();
+}
+
+function showLoading()
+{
+    document.getElementById("loadingDiv").classList.remove("hidden");
+}
+function hideLoading()
+{
+    document.getElementById("loadingDiv").classList.add("hidden");
 }
 
 fetchAllIssue();
