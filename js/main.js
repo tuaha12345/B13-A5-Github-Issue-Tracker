@@ -150,10 +150,10 @@ async function modalBody(id){
             x.labels.forEach(y => {
                 // console.log(y);
                 if(y==="bug"){
-                    labelsElement+=`<button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-6"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>`;
+                    labelsElement+=`<button class="btn btn-soft btn-error rounded-2xl py-2 px-6 w-20 h-2 md:h-6  text-[4px] md:text-[16px]"><i class="fa-sharp-duotone fa-solid fa-bug"></i> BUG</button>`;
                 }
                 else{
-                    labelsElement+=`<button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-6 "> <i class="fa-solid fa-life-ring"></i> ${y}</button>`;
+                    labelsElement+=`<button class="btn btn-soft btn-warning rounded-2xl py-2 px-6  h-2 md:h-6  text-[4px] md:text-[16px]"> <i class="fa-solid fa-life-ring"></i> ${y}</button>`;
                 }
 
             })
